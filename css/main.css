@@ -1,0 +1,407 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	border: 0;
+}
+
+:root {
+	--brand__space: 50px;
+	--brand__space--small: 25px;
+	--brand__space--tiny: 10px;
+
+	--brand__font-weight--normal: 400;
+	--brand__font-weight--bold: 700;
+
+	--brand__color--bg-gray: #e8e9e6;
+	--brand__color--blue-1: #005ba8;
+	--brand__color--blue-2: #00206e;
+	--brand__color--blue-3: #00add8;
+	--brand__color--blue-4: #00a28f;
+	--brand__color--green: #00a28f;
+	--brand__color--dark-green: #357069;
+	--brand__color--dark-blue: #004b8b;
+	--brand__color--text: #000;
+	--brand__color--white: white;
+
+	--wrapper: 1000px;
+	--wrapper-header: 1000px;
+
+	--box__width: 280px;
+	--box__height: 400px;
+}
+
+body {
+	font-family: "Asap", -apple-system, system-ui, Roboto, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+img {
+	user-select: none;
+}
+
+hr {
+	border-bottom: 1.25px solid var(--brand__color--white);
+}
+
+/* header */
+.header {
+	display: grid;
+	grid-template-columns: 180px 1fr 150px;
+	place-items: center left;
+	padding: 30px 0 34px;
+	width: var(--wrapper-header);
+	margin: auto;
+}
+
+.header__title {
+	color: var(--brand__color--blue-4);
+}
+
+.header__title h1 {
+	font-size: clamp(32px, 3vw, 40px);
+	margin-top: -5px;
+	line-height: 0;
+}
+
+.header__fact-sheet {
+	place-self: center;
+	justify-self: right;
+}
+
+.header__fact-sheet label {
+	padding: 5px 10px;
+	font-size: 20px;
+	font-weight: var(--brand__font-weight--bold);
+	color: var(--brand__color--white);
+	background-color: var(--brand__color--green);
+}
+
+/* main */
+main {
+	margin-left: clamp(10px, 2vw, 20px);
+	margin-right: clamp(10px, 2vw, 20px);
+	margin-top: var(--brand__space--tiny);
+}
+
+/* sections */
+.section {
+	width: var(--wrapper);
+	padding: 15px var(--brand__space);
+	margin-bottom: 30px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* sections grid */
+.section--full-width {
+}
+
+.section--3-cols {
+	width: var(--wrapper);
+}
+
+/* sections content */
+.section__title {
+	color: inherit;
+	margin-bottom: var(--brand__space--small);
+}
+
+.section__title h2 {
+	color: inherit;
+	font-size: 30px;
+	text-transform: uppercase;
+}
+
+.section__title-number {
+	color: var(--title-number__color);
+	text-shadow: -1px -1px 0 var(--brand__color--white),
+		1px -1px 0 var(--brand__color--white),
+		-1px 1px 0 var(--brand__color--white),
+		1px 1px 0 var(--brand__color--white);
+	font-size: clamp(68px, 5vw, 80px);
+	margin-right: 2px;
+}
+
+/* section boxes */
+.section__boxes {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	gap: 28px;
+}
+
+.section__box {
+	background-color: var(--brand__color--white);
+	position: relative;
+}
+
+.section__boxes--transparent .section__box {
+	background-color: unset;
+}
+
+.section__box--transparent {
+	background-color: unset;
+}
+
+/* sections colors */
+.section--material {
+	color: var(--brand__color--white);
+	background-color: var(--brand__color--dark-blue);
+	--title-number__color: var(--brand__color--dark-blue);
+}
+
+.section--manufacturing {
+	color: var(--brand__color--white);
+	background-color: var(--brand__color--dark-green);
+	--title-number__color: var(--brand__color--dark-green);
+}
+
+.section--packaging {
+	color: var(--brand__color--white);
+	background-color: var(--brand__color--green);
+	--title-number__color: var(--brand__color--green);
+}
+
+/* material */
+.material__percentage {
+	color: var(--brand__color--green);
+	font-size: 40px;
+	font-weight: var(--brand__font-weight--bold);
+	text-align: right;
+	margin-right: 20px;
+	margin-top: -10px;
+}
+
+.material__percentage-number {
+	font-size: clamp(110px, 14vw, 130px);
+}
+
+.material__content {
+	font-size: 20px;
+	font-weight: var(--brand__font-weight--bold);
+	margin-right: 40px;
+	padding-bottom: 72px;
+}
+
+.material__content hr {
+	margin: 20px 0;
+}
+
+.material__illustration {
+	position: absolute;
+	bottom: -20px;
+	right: -50px;
+}
+
+/* manufacturing */
+.manufacturing__percentage,
+.packaging__percentage {
+	color: var(--brand__color--green);
+	font-size: 40px;
+	font-weight: var(--brand__font-weight--bold);
+}
+
+.manufacturing__energy .manufacturing__percentage {
+	display: grid;
+	grid-template-columns: 125px auto;
+	text-align: left;
+}
+
+.manufacturing__percentage-number,
+.packaging__percentage-number {
+	font-size: 80px;
+}
+
+.manufacturing__text,
+.packaging__text {
+	font-size: 20px;
+	font-weight: var(--brand__font-weight--bold);
+	color: var(--brand__color--text);
+}
+
+.manufacturing__energy .manufacturing__text {
+	place-self: center start;
+}
+
+/* manufacturing  */
+.manufacturing__content {
+	position: relative;
+	z-index: 1;
+	padding: 22px 36px;
+}
+
+.manufacturing__illustration {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 0;
+	overflow: hidden;
+}
+
+.manufacturing__illustration img {
+	width: 100%;
+	height: 101%;
+	object-fit: cover;
+}
+
+.manufacturing__content--electricity {
+	margin-top: 116px;
+	margin-left: 18px;
+}
+
+.manufacturing__content--water {
+	margin-top: 116px;
+	margin-left: 70px;
+}
+
+.section--manufacturing .section__box {
+	min-height: 400px;
+	margin-bottom: 35px;
+}
+
+/* packaging  */
+.packaging__item {
+	margin-left: 54px;
+	margin-right: 10px;
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+
+.section--packaging {
+	position: relative;
+}
+
+.section--packaging .section__boxes {
+	position: relative;
+	z-index: 1;
+	margin-bottom: 54px;
+	margin-top: -20px;
+}
+
+.packaging__illustration {
+	position: absolute;
+	right: 0;
+	bottom: -15px;
+	left: 0;
+	z-index: 0;
+}
+
+.packaging__illustration img {
+	width: 100%;
+	object-fit: cover;
+}
+
+@media screen and (max-width: 679px) {
+	:root {
+		--wrapper: 100%;
+		--wrapper-header: auto;
+	}
+
+	.header {
+		display: block;
+		text-align: center;
+		padding-left: 0;
+		padding-right: 0;
+		margin-left: clamp(10px, 2vw, 20px);
+		margin-right: clamp(10px, 2vw, 20px);
+	}
+
+	.header__logo {
+		margin: auto auto 50px;
+	}
+
+	.header__title {
+		margin-bottom: 30px;
+	}
+
+	.header__fact-sheet,
+	.header__fact-sheet label {
+		display: block;
+		width: 100%;
+	}
+
+	.section {
+		padding: 15px 30px;
+	}
+
+	.section__boxes {
+		grid-template-columns: 1fr;
+	}
+
+	.section--material .section__boxes {
+		grid-template-columns: 1fr;
+		grid-template-rows: 1fr 2fr 2fr;
+	}
+
+	.material__percentage {
+		text-align: left;
+	}
+
+	.material__content {
+		margin-right: 0;
+	}
+
+	.section--material .section__boxes {
+		overflow: hidden;
+	}
+
+	.material__illustration img {
+		width: 80%;
+	}
+
+	.section--manufacturing .section__boxes {
+		gap: 0;
+	}
+
+	.section--manufacturing .section__box {
+		min-height: 425px;
+	}
+
+	.manufacturing__content {
+		padding: 22px;
+	}
+}
+
+@media screen and (min-width: 680px) and (max-width: 1080px) {
+	:root {
+		--wrapper: 800px;
+		--wrapper-header: 800px;
+	}
+
+	.section--manufacturing .section__boxes {
+		grid-template-columns: 1fr 1fr;
+	}
+
+	.section--manufacturing .section__box {
+		min-height: 480px;
+	}
+
+	.section--manufacturing .section__box--margin-left {
+		position: relative;
+		left: calc(50% + 14px);
+	}
+
+	.manufacturing__electricity .manufacturing__text {
+		max-width: 200px;
+	}
+}
+
+@media screen and (min-width: 760px) and (max-width: 880px) {
+	:root {
+		--wrapper: 720px;
+		--wrapper-header: 720px;
+	}
+
+	.section--packaging .section__boxes {
+		grid-template-columns: 1fr 1fr;
+		margin-top: 20px;
+		margin-bottom: 80px;
+	}
+
+	.section--packaging .section__box--transparent {
+		display: none;
+	}
+}
